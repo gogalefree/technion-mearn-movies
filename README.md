@@ -4,8 +4,8 @@
 #### This repo contains of both node.js server code and React client code, each in a seperate folder.
 
 For a live demo of the app on heroku server using mongo cloud platform, please visit:
+https://technion-learn-movies.herokuapp.com
 
-https://teach-mean-guy-freedman.herokuapp.com
 
 The project uses React-UI, a Material Design UI framework designed for React apps. 
 To run locally, do as follows:
