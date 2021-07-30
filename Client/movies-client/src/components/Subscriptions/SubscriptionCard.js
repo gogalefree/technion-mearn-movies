@@ -15,7 +15,6 @@ import DeleteMemberDialog from './DeleteMemberDialog';
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 500
-    //minHeight: 440
   },
   deleteButton: {
     color: theme.palette.error.dark
@@ -132,10 +131,10 @@ export default function SubscriptionCard({ subscriptions, member }) {
           memberId={member._id}
         />
 
-       {subscriptions && subscriptions.map((s, index) => {
-          return <MovieSubscriptionRow subscription={s} key={index} />;
-        })}
-       
+        {subscriptions &&
+          subscriptions.map((s, index) => {
+            return <MovieSubscriptionRow subscription={s} key={index} />;
+          })}
       </Card>
 
       <DeleteMemberDialog

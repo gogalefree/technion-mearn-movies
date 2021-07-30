@@ -1,7 +1,7 @@
 import { Container } from '@material-ui/core';
 import React, { useState, useEffect } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import useToken from '../Login/useToken';
 
 export default function NavBar() {

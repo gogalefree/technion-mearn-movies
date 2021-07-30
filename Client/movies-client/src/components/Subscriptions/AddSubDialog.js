@@ -14,9 +14,8 @@ import { createSubscription } from './SubscriptionUtils';
 
 import Slide from '@material-ui/core/Slide';
 
-
 const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props}  />;
+  return <Slide direction="up" ref={ref} {...props} />;
 });
 
 const useStyles = makeStyles((theme) => ({
@@ -58,7 +57,7 @@ export default function AddSubDialog({
       return;
     }
     isLoading = true;
-    console.log('memberId' , memberId);
+    console.log('memberId', memberId);
     const sub = {
       memberId: memberId,
       moviesId: movieId,
@@ -97,9 +96,9 @@ export default function AddSubDialog({
     let date = new Date(dateString);
     let epoch = parseInt(Number(date) / 1000); //turn millisconds to seconds
     setMovieDate(parseInt(epoch));
-    console.log('date string: ' , dateString);
-    console.log('date: ' , date);
-    console.log('epoch: ' , epoch);
+    console.log('date string: ', dateString);
+    console.log('date: ', date);
+    console.log('epoch: ', epoch);
   };
 
   let items = [];
@@ -127,8 +126,6 @@ export default function AddSubDialog({
           Add Subscription - {name}
         </DialogTitle>
         <DialogContent>
-          {/* <DialogContentText>
-          </DialogContentText> */}
           <form className={classes.form} noValidate>
             <FormControl className={classes.formControl}>
               <InputLabel htmlFor="movie-name">Movie To Watch</InputLabel>

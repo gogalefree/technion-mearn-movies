@@ -25,7 +25,7 @@ export default function Movies() {
   const [movies, setMovies] = useState([{}]);
   const [subscriptions, setSubscriptions] = useState([{}]);
   const history = useHistory();
-  
+
   useEffect(() => {
     async function fetchMovies() {
       try {
@@ -49,9 +49,9 @@ export default function Movies() {
     fetchSubscriptions();
   }, []);
 
-  const onAddMovie = ()=> {
-      history.push('/createMovie')
-  }
+  const onAddMovie = () => {
+    history.push('/createMovie');
+  };
 
   const movieGridItems = movies.map((m, index) => {
     console.log(m._id);

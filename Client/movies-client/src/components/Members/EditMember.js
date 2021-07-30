@@ -2,14 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import {
-  Button,
-  CardActions,
-  Card,
-  CardMedia,
-  CardHeader,
-  Typography
-} from '@material-ui/core';
+import { Button, CardActions, Card, CardHeader } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { updateMember } from './MembersUtils';
 
@@ -90,8 +83,8 @@ export default function EditMember() {
     };
 
     try {
-       let res = await updateMember(id, memberToUpdate);
-       history.push('/subscriptions');
+      let res = await updateMember(id, memberToUpdate);
+      history.push('/subscriptions');
     } catch (err) {
       console.log(err);
       alert('Could not update member due to network error');

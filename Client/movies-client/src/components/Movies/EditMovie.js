@@ -6,8 +6,7 @@ import {
   CardActions,
   Card,
   CardMedia,
-  CardHeader,
-  Typography
+  CardHeader
 } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { updateMovie } from './MovieUtils';
@@ -94,7 +93,12 @@ export default function EditMovie() {
       return;
     }
 
-    const movieToUpdate = { ...movie, name, yearPremiered: parseInt(year), geners };
+    const movieToUpdate = {
+      ...movie,
+      name,
+      yearPremiered: parseInt(year),
+      geners
+    };
     console.log('movie to update: ', movieToUpdate);
     try {
       await updateMovie(movieToUpdate);
@@ -106,70 +110,70 @@ export default function EditMovie() {
   };
 
   return (
-     <div className={classes.paper}>
-    <Card className={classes.card}>
-      <CardHeader title={movie.name ? movie.name.toUpperCase() : ''} />
-      <CardMedia
-        component="img"
-        alt={movie.name}
-        height="400"
-        image={movie.imageUrl}
-        title={movie.name}
-      />
+    <div className={classes.paper}>
+      <Card className={classes.card}>
+        <CardHeader title={movie.name ? movie.name.toUpperCase() : ''} />
+        <CardMedia
+          component="img"
+          alt={movie.name}
+          height="400"
+          image={movie.imageUrl}
+          title={movie.name}
+        />
 
-      <div className={classes.paper}>
-        <form noValidate autoComplete="off">
-          <TextField
-            fullWidth
-            id="name"
-            label="Movie Title"
-            value={name}
-            onChange={onTitleChanged}
-            className={classes.textField}
-            error={nameError}
-          />
-    
-          <TextField
-            fullWidth
-            id="year"
-            type="number"
-            label="Year Premiered"
-            value={year}
-            onChange={(e) => setYear(e.target.value)}
-            className={classes.textField}
-          />
-          <TextField
-            fullWidth
-            id="Geners"
-            label="Put a Comma between Geners"
-            className={classes.textField}
-            value={geners.join(', ')}
-            onChange={(e) => setGeners(e.target.value.split(', '))}
-          />
-          <CardActions>
-            <Button
-              size="small"
-              color="primary"
-              variant="outlined"
-              className="mb-3"
-              onClick={onUpdate}
-            >
-              Update
-            </Button>
+        <div className={classes.paper}>
+          <form noValidate autoComplete="off">
+            <TextField
+              fullWidth
+              id="name"
+              label="Movie Title"
+              value={name}
+              onChange={onTitleChanged}
+              className={classes.textField}
+              error={nameError}
+            />
 
-            <Button
-              size="small"
-              color="secondary"
-              className="mb-3 ml-4"
-              variant="outlined"
-              onClick={onCancel}
-            >
-              Cancel
-            </Button>
-          </CardActions>
-        </form>
-      </div>
-    </Card>
-     </div>
+            <TextField
+              fullWidth
+              id="year"
+              type="number"
+              label="Year Premiered"
+              value={year}
+              onChange={(e) => setYear(e.target.value)}
+              className={classes.textField}
+            />
+            <TextField
+              fullWidth
+              id="Geners"
+              label="Put a Comma between Geners"
+              className={classes.textField}
+              value={geners.join(', ')}
+              onChange={(e) => setGeners(e.target.value.split(', '))}
+            />
+            <CardActions>
+              <Button
+                size="small"
+                color="primary"
+                variant="outlined"
+                className="mb-3"
+                onClick={onUpdate}
+              >
+                Update
+              </Button>
+
+              <Button
+                size="small"
+                color="secondary"
+                className="mb-3 ml-4"
+                variant="outlined"
+                onClick={onCancel}
+              >
+                Cancel
+              </Button>
+            </CardActions>
+          </form>
+        </div>
+      </Card>
+    </div>
   );
 }

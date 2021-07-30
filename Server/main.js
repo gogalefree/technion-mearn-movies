@@ -29,4 +29,3 @@ app.use('/api/movies', moviesRouter);
 app.use('/api/subscriptions', subscriptionsRouter);
 app.use('/api/members', membersRouter);
 app.listen(port, () => console.log('Listening on port: ', port));
-

@@ -65,7 +65,6 @@ export default function MovieCard({ movie, subscriptions }) {
 
   return (
     <Card className={classes.root}>
-      {/* <CardActionArea> */}
       <CardMedia
         component="img"
         alt={movie.name}

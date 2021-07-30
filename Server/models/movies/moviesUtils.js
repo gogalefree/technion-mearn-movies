@@ -56,12 +56,10 @@ exports.deleteMovie = async function (movieId) {
 };
 
 exports.getMovieById = async function (movieId) {
-  try{
+  try {
     const m = await Movie.findById(movieId).exec();
     return m;
-  }catch(err) {
-    throw new Error(err)
+  } catch (err) {
+    throw new Error(err);
   }
-    
-  };
-  
+};

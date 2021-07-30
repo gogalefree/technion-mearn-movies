@@ -1,5 +1,5 @@
 const Member = require('./membersModel');
-const subscriptionUtils = require('../subscriptions/subscriptionsUtils')
+const subscriptionUtils = require('../subscriptions/subscriptionsUtils');
 
 exports.getAllMemebers = function () {
   return new Promise((resolve, reject) => {
@@ -41,7 +41,7 @@ exports.deleteMember = async function (memberId) {
   try {
     console.log('member utils deleting');
     await Member.findByIdAndDelete(memberId);
-    await subscriptionUtils.deleteAllSubscriptionsForMember(memberId)
+    await subscriptionUtils.deleteAllSubscriptionsForMember(memberId);
     return { message: 'Deleted Succesfully' };
   } catch (err) {
     throw new Error(err);
@@ -54,7 +54,7 @@ exports.updateMember = async function (id, data) {
       .update({
         fullName: data.fullName,
         email: data.email,
-        city: data.city,
+        city: data.city
       })
       .exec();
     return u;

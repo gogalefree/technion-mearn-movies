@@ -12,7 +12,6 @@ router.route('/').get(async function (req, res) {
   }
 });
 
-
 //Get Movie with id
 router.route('/:id').get(async function (req, res) {
   try {
@@ -24,6 +23,7 @@ router.route('/:id').get(async function (req, res) {
   }
 });
 
+//Update Movie
 router.route('/:id').put(async function (req, res) {
   console.log('movie router update movie');
   try {
@@ -39,6 +39,7 @@ router.route('/:id').put(async function (req, res) {
   }
 });
 
+//Create Movie
 router.route('/').post(async function (req, res) {
   console.log('create movie');
   try {

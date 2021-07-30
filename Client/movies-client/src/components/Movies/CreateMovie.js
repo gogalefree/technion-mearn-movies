@@ -19,9 +19,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(5),
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',  
+    alignItems: 'center'
   },
-  
+
   spinner: {
     display: 'flex',
     flexDirection: 'column',
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
   errorStyle: {
     color: theme.palette.error.main,
-    marginTop: "-15px"
+    marginTop: '-15px'
   },
   image: {
     width: 500,
@@ -57,8 +57,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'left',
     marginTop: theme.spacing(3)
-  },
-
+  }
 }));
 
 export default function CreateMovie() {
@@ -115,9 +114,7 @@ export default function CreateMovie() {
             title={name}
           />
         )}
-        {/* <div className={classes.paper}> */}
         <CardContent>
-          {/* <form noValidate autoComplete="off"> */}
           <TextField
             fullWidth
             id="name"
@@ -128,9 +125,12 @@ export default function CreateMovie() {
             error={nameError}
             required={true}
             margin="normal"
-            
           />
-          {nameError && <div className={classes.errorStyle} ><small >Title is required</small></div>}
+          {nameError && (
+            <div className={classes.errorStyle}>
+              <small>Title is required</small>
+            </div>
+          )}
 
           <TextField
             fullWidth
@@ -159,27 +159,25 @@ export default function CreateMovie() {
           />
 
           <CardActions className={classes.actions}>
-            {/* <div className={classes.actions}> */}
-              <Button
-                size="small"
-                color="primary"
-                variant="outlined"
-                className="mb-3"
-                onClick={onAddMovie}
-              >
-                ADD MOVIE
-              </Button>
+            <Button
+              size="small"
+              color="primary"
+              variant="outlined"
+              className="mb-3"
+              onClick={onAddMovie}
+            >
+              ADD MOVIE
+            </Button>
 
-              <Button
-                size="small"
-                color="secondary"
-                className="mb-3 ml-4"
-                variant="outlined"
-                onClick={onCancel}
-              >
-                CANCEL
-              </Button>
-            {/* </div> */}
+            <Button
+              size="small"
+              color="secondary"
+              className="mb-3 ml-4"
+              variant="outlined"
+              onClick={onCancel}
+            >
+              CANCEL
+            </Button>
           </CardActions>
         </CardContent>
       </Card>

@@ -1,15 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import {
-  Button,
-  CardActions,
-  Card,
-  CardMedia,
-  CardHeader,
-  Typography
-} from '@material-ui/core';
+import { Button, CardActions, Card, CardHeader } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { createMember } from './MembersUtils';
 
@@ -48,8 +40,6 @@ export default function CreateMember(props) {
   const classes = useStyles();
   const history = useHistory();
 
- 
-
   const onNameChanged = (e) => {
     setNameError(false);
     setName(e.target.value);
@@ -66,7 +56,6 @@ export default function CreateMember(props) {
   };
 
   const onCancel = () => {
-    //history.push('/subscriptions');
     props.history.goBack();
   };
 
@@ -84,8 +73,8 @@ export default function CreateMember(props) {
     };
 
     try {
-       let res = await createMember(memberToCreate);
-       history.push('/subscriptions');
+      let res = await createMember(memberToCreate);
+      history.push('/subscriptions');
     } catch (err) {
       console.log(err);
       alert('Could not create member due to network error');
@@ -135,7 +124,7 @@ export default function CreateMember(props) {
                 variant="outlined"
                 className="mb-3"
                 onClick={onCreate}
-                disabled={nameError || emailError || name===''}
+                disabled={nameError || emailError || name === ''}
               >
                 Create
               </Button>

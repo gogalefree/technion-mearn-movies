@@ -10,9 +10,6 @@ exports.getAllSubscriptions = function () {
         console.log('get all subscriptions error :>> ', err);
         reject(err);
       } else {
-    //       resolve(data);
-    //   }})})};
-
         //Get Member name for each subscription
         const subsWithMemberName = await data.map(async (s) => {
           const member = await memberUtils.getMemberById(s.memberId);

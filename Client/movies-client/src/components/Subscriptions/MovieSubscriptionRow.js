@@ -30,7 +30,7 @@ export default function MovieSubscriptionRow({ subscription = {} }) {
   const history = useHistory();
 
   const readableDate = (strInt) => {
-    console.log('readable date: ' , strInt);
+    console.log('readable date: ', strInt);
     const utcSeconds = parseInt(strInt);
     var current = new Date(0);
     current.setUTCSeconds(utcSeconds);

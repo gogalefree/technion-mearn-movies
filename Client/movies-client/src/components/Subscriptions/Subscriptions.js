@@ -30,7 +30,7 @@ export default function AllSubscriptions() {
     async function fetchSubscriptions() {
       try {
         const res = await getAllSubscriptions();
-        console.log('subscriptions new: ' , res.data);
+        console.log('subscriptions new: ', res.data);
         setSubscriptions(res.data);
       } catch (err) {
         alert('Error connecting to server: ', err);
@@ -55,7 +55,7 @@ export default function AllSubscriptions() {
   return (
     <div className={classes.root}>
       <Typography variant="h3" color="textSecondary" className="mb-5">
-      Members And Subscriptions  
+        Members And Subscriptions
       </Typography>
 
       <Button
@@ -68,17 +68,15 @@ export default function AllSubscriptions() {
         Add New Member
       </Button>
       <Grid container spacing={5}>
-
-        {members && members.map((m, index) => {
-          let subs = subscriptions.filter((s) => s.memberId === m._id);
-          return (
-            <Grid item xs={6} key={index}>
-              <SubscriptionCard subscriptions={subs} member={m} />
-            </Grid>
-          );
-        })}
-
-      
+        {members &&
+          members.map((m, index) => {
+            let subs = subscriptions.filter((s) => s.memberId === m._id);
+            return (
+              <Grid item xs={6} key={index}>
+                <SubscriptionCard subscriptions={subs} member={m} />
+              </Grid>
+            );
+          })}
       </Grid>
     </div>
   );

@@ -1,7 +1,7 @@
 import axios from 'axios';
-
-//export const baseURL = 'http://localhost:8080';
-export const baseURL = '';
+//Change before production build
+export const baseURL = 'http://localhost:8080';
+//export const baseURL = '';
 
 export function getAllMovies() {
   return new Promise(async (resolve, reject) => {
@@ -53,9 +53,6 @@ export function deleteMovie(mId) {
   console.log('Deleting movie with id: ', mId);
   return new Promise(async (resolve, reject) => {
     try {
-      // const headers = {
-      //   'Content-Type': 'application/json'
-      // };
       const url = baseURL + '/api/movies/' + mId;
       console.log('delete url: ', url);
       const res = await axios.delete(url);
@@ -68,7 +65,6 @@ export function deleteMovie(mId) {
 
 export function fetchMoviesNotSeen(moviesSeenIds) {
   return new Promise(async (resolve, reject) => {
-//    let allMovies;
     try {
       const seenIds = Array.from(moviesSeenIds);
       const res = await getAllMovies();
