@@ -1,0 +1,61 @@
+
+//Login User
+POST http://localhost:8080/api/users/login
+Content-Type: application/json
+
+{
+    "username": "gogalefree@gmail.com",
+    "password": "1234"
+}
+
+###
+//Get All Movies
+
+GET http://localhost:8080/api/movies
+
+
+###
+//Get Subscriptions
+
+GET http://localhost:8080/api/subscriptions
+
+
+###
+GET http://localhost:8080/api/members
+
+
+###
+//Get Movie with id
+
+GET http://localhost:8080/api/movies/60ebe394473f4257c3f11265
+
+
+//Create Memeber
+###
+POST http://localhost:8080/api/members
+content-type: application/json
+
+{
+    "fullName": "Shalom Tikva",
+    "email": "st@gmail.com",
+    "city": "Netanya"
+}
+
+###Update Member
+
+PUT http://localhost:8080/api/members/60f45b597a75ea3a6ae801a3
+content-type: application/json
+
+{
+    "fullName": "Rami Benayun",
+    "email": "ram@gmail.com",
+    "city": "RamatGan"
+}
+
+###
+//delete member
+DELETE http://localhost:8080/api/members/60f45b597a75ea3a6ae801a3
+
+###
+//Get members
+GET http://localhost:8080/api/members
